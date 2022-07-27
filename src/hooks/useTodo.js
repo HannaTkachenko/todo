@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const useTodo = () => {
-  const [tasks, setTasks] = useState([initialValue]);
+const useTodo = (initialValue) => {
+  const [tasks, setTasks] = useState(initialValue);
 
   return {
     tasks,

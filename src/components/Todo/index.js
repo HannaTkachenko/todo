@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
-import { useTodo } from "../../hooks";
-//реекспорт настроить!!!
+import { useTodo } from "./../../hooks";
+
 
 const Todo = () => {
   const { tasks, setTasks, addTask, setDoneTask, deleteTask } = useTodo([
