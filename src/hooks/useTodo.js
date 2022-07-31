@@ -10,7 +10,17 @@ const useTodo = (initialValue) => {
       const newTask = { id: Date.now(), body: value.body, isDone: false };
       setTasks([...tasks, newTask]);
     },
-    setDoneTask: () => {},
+    setDoneTask: (id) => {
+      setTasks(
+        tasks.map((task) => {
+          if (task.id === id) {
+            task.isDone = true;
+            return task;
+          }
+          return task;
+        })
+      );
+    },
     deleteTask: (id) => {
       setTasks(tasks.filter((task) => task.id !== id));
     },
