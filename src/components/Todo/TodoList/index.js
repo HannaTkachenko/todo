@@ -8,7 +8,7 @@ const TodoList = ({tasks, setDoneTask,deleteTask }) => {
         {tasks.map((task) => (
           
           <li key={task.id}>
-            <input type='checkbox' checked={task.isDone} onClick={
+            <input type='checkbox' checked={task.isDone} onChange={
               ()=>setDoneTask(task.id)
             }/>
             {task.body}
