@@ -5,20 +5,13 @@ const useTodo = (initialValue) => {
 
   return {
     tasks,
-    setTasks,
     addTask: (value) => {
       const newTask = { id: Date.now(), body: value.body, isDone: false };
       setTasks([...tasks, newTask]);
     },
     setDoneTask: (id) => {
       setTasks(
-        tasks.map((task) => {
-          if (task.id === id) {
-            task.isDone = true;
-            return task;
-          }
-          return task;
-        })
+        tasks.map((task) => (task.id === id ? { ...task, isDone: true } : task))
       );
     },
     deleteTask: (id) => {

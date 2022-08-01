@@ -12,7 +12,7 @@ const Todo = () => {
   ]);
   return (
     <div>
-      <TodoForm />
+      <TodoForm addTask={addTask}/>
       <h2>tasks list</h2>
       <ul>
         {tasks.map((task) => (
