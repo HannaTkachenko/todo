@@ -1,6 +1,7 @@
 import React from "react";
 import { useTodo } from "./../../hooks";
 import TodoForm from "./../Forms/TodoForm/";
+import TodoList from "./TodoList";
 
 const Todo = () => {
   const { tasks, setTasks, addTask, setDoneTask, deleteTask } = useTodo([
@@ -12,21 +13,12 @@ const Todo = () => {
   ]);
   return (
     <div>
-      <TodoForm addTask={addTask}/>
-      <h2>tasks list</h2>
-      <ul>
-        {tasks.map((task) => (
-          
-          <li key={task.id}>
-            {task.body}
-            <span
-              onClick={() => {deleteTask(task.id); }}
-            >
-              X
-            </span>
-          </li>
-        ))}
-      </ul>
+      <TodoForm addTask={addTask} />
+      <TodoList
+        tasks={tasks}
+        setDoneTask={setDoneTask}
+        deleteTask={deleteTask}
+      />
     </div>
   );
 };
