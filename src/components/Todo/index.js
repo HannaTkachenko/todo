@@ -3,6 +3,7 @@ import { useTodo } from "./../../hooks";
 import TodoForm from "./../Forms/TodoForm/";
 import TodoList from "./TodoList";
 import Header from "./Header";
+import styles from './../../styles/styles.scss';
 
 const Todo = () => {
   const { tasks, setTasks, addTask, setDoneTask, deleteTask } = useTodo([
@@ -15,7 +16,7 @@ const Todo = () => {
   return (
     <>
       <Header />
-      <section>
+      <section className={styles.tasksSection}>
         <TodoForm addTask={addTask} />
         <TodoList
           tasks={tasks}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import { SCHEMA_TASK_BODY } from "./../../../utils/schemaValidation";
+import styles from './../../../styles/styles.scss';
 
 const initialValues = {
   body: "",
@@ -19,9 +20,9 @@ const TodoForm = (props) => {
         onSubmit={onSubmit}
         validationSchema={SCHEMA_TASK_BODY}
       >
-        <Form>
-          <Field name="body" placeholder="Your task" />
-          <input type="submit" value="add" />
+        <Form className={styles.form}>
+          <Field className={styles.inputField} name="body" placeholder="Your task" />
+          <input className={styles.addBtn} type="submit" value="add" />
         </Form>
       </Formik>
     </>
