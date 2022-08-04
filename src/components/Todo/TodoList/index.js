@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './../../../styles/styles.scss'
+import styles from './../../../styles/styles.module.scss'
 
 const TodoList = ({tasks, setDoneTask,deleteTask }) => {
   return (

@@ -3,10 +3,10 @@ import { useTodo } from "./../../hooks";
 import TodoForm from "./../Forms/TodoForm/";
 import TodoList from "./TodoList";
 import Header from "./Header";
-import styles from './../../styles/styles.scss';
+import styles from './../../styles/styles.module.scss';
 
 const Todo = () => {
-  const { tasks, setTasks, addTask, setDoneTask, deleteTask } = useTodo([
+  const { tasks, addTask, setDoneTask, deleteTask } = useTodo([
     {
       id: Date.now(),
       body: "",
