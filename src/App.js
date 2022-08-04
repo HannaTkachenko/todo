@@ -1,6 +1,6 @@
 import Todo from './components/Todo/';
 
-function App() {
+const App = () => {
   return (
     <>
     <Todo/>
