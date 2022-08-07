@@ -1,6 +1,5 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import cx from "classnames";
 import { SCHEMA_TASK_BODY } from "./../../../utils/schemaValidation";
 import styles from "./../../../styles/styles.module.scss";
 

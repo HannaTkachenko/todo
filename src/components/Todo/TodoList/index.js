@@ -9,14 +9,12 @@ const TodoList = ({ tasks, setDoneTask, deleteTask }) => {
       <ul>
         {tasks.map((task) => (
           <li key={task.id}>
-            
-              <input
-                type="checkbox"
-                checked={task.isDone}
-                onChange={() => setDoneTask(task.id)}
-              />
-              <p>{task.body}</p>
-            
+            <input
+              type="checkbox"
+              checked={task.isDone}
+              onChange={() => setDoneTask(task.id)}
+            />
+            <p>{task.body}</p>
             <DeleteIcon
               onClick={() => {
                 deleteTask(task.id);
