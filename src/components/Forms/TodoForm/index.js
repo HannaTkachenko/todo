@@ -24,14 +24,15 @@ const TodoForm = (props) => {
         validationSchema={SCHEMA_TASK_BODY}
       >
         <Form className={styles.form}>
-          <Field name="body" placeholder="Your task"  />
+          <h2>new task</h2>
 
+          <Field name="body" placeholder="Your task" />
+          <input className={styles.addBtn} type="submit" value="add" />
           <ErrorMessage
             name={"body"}
             component="div"
             className={styles.error}
           />
-          <input className={styles.addBtn} type="submit" value="add" />
         </Form>
       </Formik>
     </>

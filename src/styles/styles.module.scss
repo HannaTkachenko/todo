@@ -3,47 +3,104 @@
 * {
   box-sizing: border-box;
 }
-
-%text-style {
-  color: black;
+body {
+  margin: 0;
+}
+@mixin text-style($color, $fsize, $fweight, $texttrans) {
+  color: $color;
   text-align: left;
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  font-weight: normal;
+  font-size: $fsize;
+  font-weight: $fweight;
+  text-transform: $texttrans;
 }
 
-%border-style{
-  border: 1px solid gray;
+%border-style {
+  margin: 0.5em 1em 0 1em;
+  padding: 1em;
+  border: 1px solid #0097ee25;
+  box-shadow: 2px 2px 5px 0px rgb(186, 182, 196);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0098ee;
+  h1 {
+    @include text-style(white, 2.5em, 500, uppercase);
+  }
 }
 
-
+h2 {
+  @include text-style(black, 1em, 400, uppercase);
+  text-transform: uppercase;
+}
 .tasksSection {
   margin: auto;
   width: 50vw;
   display: flex;
   flex-direction: column;
-  @extend %border-style;
-
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  @extend %border-style;
+  input {
+    &:nth-child(2) {
+      width: 100%;
+      padding: 1em;
+      border-color: transparent;
+      border-bottom: 1px solid #0097ee;
+      @include text-style(black, 1em, 400, none);
+      &:focus-visible {
+        background-color: transparent;
+        outline: none;
+      }
+    }
+    &:nth-child(3) {
+      align-self: flex-end;
+    }
+  }
+}
+.addBtn {
+  width: 4em;
+  padding: 1em;
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+  @include text-style(#0097ee, 1em, 400, uppercase);
+}
+
+.tasksContainer {
+  @extend %border-style;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1em;
+      width: 100%;
+      @include text-style(black, 1em, 400, none);
+      p {
+        width: 70%;
+        word-break: break-word;
+      }
+    }
+  }
+}
+
 .error {
-  width: 150px;
-  height: 50px;
+  width: 200px;
+  height: 30px;
   padding: 5px;
   position: absolute;
-  right: 20px;
-  top: 16px;
+  left: 50%;
+  top: 17%;
   color: white;
-  background: #C03737;
+  background: #c03737;
   border: 1px solid #830303;
   border-radius: 5px;
   text-align: center;
-}
-
-
-.valid {
-  border: 2px solid green;
-}
-
-.invalid {
-  border: 2px solid red;
 }
